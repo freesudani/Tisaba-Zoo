@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const Section = styled.section`
-  background: url(${({ image }) => image && image}) center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
+    url(${({ image }) => image && image});
   height: 100vh;
-  background-size: cover;
+  background-size: 100%;
+  background-position: 50% 60%;
   background-repeat: no-repeat;
   display: flex;
   justify-content: flex-start;

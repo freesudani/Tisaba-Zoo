@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import LogoImage from "../images/3d1191f8fb9d40a6be696b185512e83b.png";
 
 const Navbar = styled.nav`
   height: 60px;
@@ -18,6 +19,11 @@ const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: bold;
   font-style: italic;
+  margin-top: 3rem;
+
+  img {
+    width: 7rem;
+  }
 `;
 
 const NavItems = styled.div``;
@@ -31,7 +37,9 @@ const NavbarLink = styled(Link)`
 const Header = () => {
   return (
     <Navbar>
-      <Logo to="/">Animal</Logo>
+      <Logo to="/">
+        <img src={LogoImage} />
+      </Logo>
       <NavItems>
         <NavbarLink to="/">Home</NavbarLink>
         <NavbarLink to="/about">About</NavbarLink>
