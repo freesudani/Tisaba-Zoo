@@ -11,6 +11,8 @@ import Services from "./pages/Services";
 import { AnimatePresence } from "framer-motion";
 import GlobalStyle from "./globalStyles";
 import styled from "styled-components";
+import Animals from "./components/Animals";
+import Footer from "./components/Footer";
 
 const Section = styled.section`
   overflow-x: hidden;
@@ -28,6 +30,8 @@ function App() {
           <Route path="/services" component={Services} />
         </Switch>
       </AnimatePresence>
+      <Animals />
+      <Footer />
     </Section>
   );
 }
