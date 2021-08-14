@@ -1,6 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
+import { AnimalsList } from "../data/AnimalsData";
 import Animal from "./Animal";
 
 const SectionAnimals = styled.section`
@@ -16,7 +17,7 @@ const Animals = () => {
   return (
     <SectionAnimals>
       {AnimalsList.map((ani) => (
-        <Animal />
+        <Animal key={ani.id} {...ani} />
       ))}
     </SectionAnimals>
   );

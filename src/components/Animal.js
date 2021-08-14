@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { AnimalsList } from "../data/AnimalsData";
 
 const AnimalBox = styled(motion.div)`
   width: 100%;
@@ -23,24 +22,26 @@ const AnimalSubtitle = styled.p`
   color: #000;
 `;
 
-const Animal = () => {
-  const [selected, setSelected] = useState(true);
+const Animal = ({ id, image, title, subtitle }) => {
+  const [selected, setSelected] = useState(false);
+  const adjustableWidth = selected ? 400 : 200;
 
   return (
     <AnimalBox
-      key={animal.id}
-      onMouseEnter={(id) => {
-        if (id == animal.id) return setSelected(true);
+      key={id}
+      onMouseEnter={() => {
+        setSelected(true);
       }}
-      onMouseLeave={(id) => {
-        if (id == animal.id) return setSelected(false);
+      onMouseLeave={() => {
+        setSelected(false);
       }}
+      style={{ height: adjustableWidth }}
     >
-      <AnimalImage src={animal.image} alt={animal.title} />
+      <AnimalImage src={image} alt={title} />
       {selected && (
         <>
-          <AnimalTitle>{animal.title}</AnimalTitle>
-          <AnimalSubtitle>{animal.subtitle}</AnimalSubtitle>
+          <AnimalTitle>{title}</AnimalTitle>
+          <AnimalSubtitle>{subtitle}</AnimalSubtitle>
         </>
       )}
     </AnimalBox>

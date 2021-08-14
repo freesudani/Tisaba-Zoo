@@ -38,7 +38,7 @@ const Header = () => {
   return (
     <Navbar>
       <Logo to="/">
-        <img src={LogoImage} />
+        <img src={LogoImage} alt="Logo" />
       </Logo>
       <NavItems>
         <NavbarLink to="/">Home</NavbarLink>
