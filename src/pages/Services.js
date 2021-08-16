@@ -17,7 +17,7 @@ const Services = () => {
       <Header />
       <Hero
         image={ImageThree}
-        title="Live in the Wild"
+        title="We Have Much To Offer"
         desc="Live like the wild animals"
       />
     </motion.div>

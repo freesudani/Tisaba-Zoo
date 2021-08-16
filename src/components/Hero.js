@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Section = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
@@ -14,7 +15,7 @@ const Section = styled.section`
   margin-top: -60px;
 `;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   color: #fff;
   padding: 2rem;
   backdrop-filter: blur(5px);
@@ -48,7 +49,16 @@ const Container = styled.div`
 const Hero = ({ image, title, desc }) => {
   return (
     <Section image={image}>
-      <Container>
+      <Container
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.7,
+          type: "spring",
+          stiffness: 120,
+        }}
+      >
         <h1>{title}</h1>
         <p>{desc}</p>
         <button>Learn more</button>

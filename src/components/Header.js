@@ -32,6 +32,10 @@ const NavbarLink = styled(Link)`
   color: #fff;
   text-decoration: none;
   padding: 1rem;
+
+  &:hover {
+    transform: scaleX(1.5);
+  }
 `;
 
 const Header = () => {

@@ -15,7 +15,11 @@ const About = () => {
       transition={transition}
     >
       <Header />
-      <Hero image={ImageTwo} title="Beautiful views" desc="Never seen before" />
+      <Hero
+        image={ImageTwo}
+        title="What Makes Us Special"
+        desc="Get to know more about us"
+      />
     </motion.div>
   );
 };

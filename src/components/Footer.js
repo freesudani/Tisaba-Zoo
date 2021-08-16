@@ -3,6 +3,7 @@ import styled from "styled-components";
 import LogoImage from "../images/3d1191f8fb9d40a6be696b185512e83b.png";
 import { Link } from "react-router-dom";
 import { FaYoutube, FaFacebookF, FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const FooterSection = styled.footer`
   height: 60px;
@@ -31,7 +32,7 @@ const SocialMedia = styled.div`
   margin-right: 10rem;
 `;
 
-const SocialMediaItem = styled.div`
+const SocialMediaItem = styled(motion.div)`
   background: #ffb347;
   margin-right: 3rem;
   border-radius: 50%;
@@ -51,13 +52,25 @@ const Footer = () => {
         <p>CopyRight by D-Coding 2021</p>
       </LogoFooter>
       <SocialMedia>
-        <SocialMediaItem to="/facebook">
+        <SocialMediaItem
+          to="/facebook"
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           <FaFacebookF />
         </SocialMediaItem>
-        <SocialMediaItem to="/instagram">
+        <SocialMediaItem
+          to="/instagram"
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           <FaInstagram />
         </SocialMediaItem>
-        <SocialMediaItem to="/youtube">
+        <SocialMediaItem
+          to="/youtube"
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           <FaYoutube />
         </SocialMediaItem>
       </SocialMedia>
