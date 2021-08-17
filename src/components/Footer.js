@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const FooterSection = styled.footer`
   height: 60px;
-  background: #a9a9a9;
+  background: #000;
   padding: 0rem calc((100vw - 1300px) / 2);
   display: flex;
   justify-content: space-between;
