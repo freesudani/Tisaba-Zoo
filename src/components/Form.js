@@ -68,21 +68,21 @@ const FormAction = styled.div`
 `;
 
 const FormVariant = {
-  hidden: {
+  animationOne: {
     x: "100vw",
+
+    transition: { type: "spring", stiffness: "120" },
   },
-  visible: {
-    x: "0",
-    transition: {
-      type: "spring",
-      stiffness: "120",
-    },
+  animationTwo: {
+    x: "9vw",
+
+    transition: { type: "spring", stiffness: "120" },
   },
 };
 
-const Form = () => {
+const Form = (props) => {
   return (
-    <SimpleForm variants={FormVariant} initial="hidden" animate="visible">
+    <SimpleForm variants={FormVariant} animate={props.onAnimation}>
       <FormControl>
         <label htmlFor="name">You Name</label>
         <input type="text" id="name" />

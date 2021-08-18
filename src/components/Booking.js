@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Form from "./Form";
+import { useCycle } from "framer-motion";
 
 const BookingSection = styled.section`
   height: 100vh;
@@ -40,20 +41,20 @@ const BookingButton = styled.button`
 `;
 
 const Booking = () => {
-  const [showForm, setShowForm] = useState(false);
+  const [animation, cycleAnimation] = useCycle("animationOne", "animationTwo");
   return (
     <BookingSection>
       <div>
         <BookingHeader>We're Open!</BookingHeader>
         <BookingParagh>All Services Are Accessible</BookingParagh>
-        <BookingButton onClick={() => setShowForm(!showForm)}>
+        <BookingButton onClick={() => cycleAnimation()}>
           Book Here!!
         </BookingButton>
         <p style={{ color: "#fff", marginTop: "1rem" }}>
           *Only For non-members
         </p>
       </div>
-      {showForm && <Form />}
+      <Form onAnimation={animation} />)
     </BookingSection>
   );
 };

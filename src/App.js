@@ -9,6 +9,7 @@ import styled from "styled-components";
 import Animals from "./components/Animals";
 import Footer from "./components/Footer";
 import Booking from "./components/Booking";
+import Misc from "./components/Misc";
 
 const Section = styled.section`
   overflow-x: hidden;
@@ -28,6 +29,7 @@ function App() {
       </AnimatePresence>
       <Animals />
       <Booking />
+      <Misc />
       <Footer />
     </Section>
   );
